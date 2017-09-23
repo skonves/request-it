@@ -18,7 +18,13 @@ describe('request-it', () => {
         // ARRANGE
 
         // ACT
-        const result = await request({ get: 'https://github.com/skonves/not-a-repo-that-i-own' });
+        const result = await request({
+            get: 'https://github.com/skonves/not-a-repo-that-i-own',
+            query: {
+                foo: 'bar',
+                fizz: 'buzz',
+            }
+        });
 
         // ASSERT
     });
