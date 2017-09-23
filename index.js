@@ -99,8 +99,9 @@ function requestIt(testFn) {
         state.headers = Object.assign(state.headers || {}, req.header);
 
         return req
-            .then(() => {
+            .then(value => {
                 state.stage = 'ASSERT';
+                return Promise.resolve(value);
             })
             .catch(ex => {
                 state.errorStage = state.errorStage || state.stage;
