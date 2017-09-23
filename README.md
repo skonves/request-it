@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/npm/v/request-it.svg)](https://www.npmjs.com/package/request-it)
+[![david](https://img.shields.io/david/skonves/request-it.svg)](https://david-dm.org/skonves/request-it)
 # Request-It
 This project is a (mostly) drop-in replacement for Mocha's `it` function and aims to improve on Mocha's default functionality by allowing:
 
