@@ -4,7 +4,7 @@
   "description": "Helper for writing functional API tests in Mocha",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/skonves/request-it/issues"
   },
-  "homepage": "https://github.com/skonves/request-it#readme"
+  "homepage": "https://github.com/skonves/request-it#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
+  },
+  "dependencies": {
+    "superagent": "^3.6.0"
+  },
+  "peerDependencies": {
+    "mocha": ">= 3"
+  }
 }
