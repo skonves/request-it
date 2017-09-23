@@ -113,7 +113,7 @@ function requestIt(testFn) {
     return testFn(request).catch(ex => {
         state.errorStage = state.errorStage || state.stage;
 
-        const route = state.errorStage !== 'ARRANGE' ? `\n\n     ${state.method} ${[state.uri, Object.keys(state.query).map(key => [key, state.query[key]].join('=')).join('&')].join('?')}` : '';
+        const route = state.errorStage !== 'ARRANGE' ? `\n\n     ${state.method} ${[state.uri, Object.keys(state.query || {}).map(key => [key, state.query[key]].join('=')).filter(x => x).join('&')].filter(x => x).join('?')}` : '';
         const headers = state.headers ? `\n     ${Object.keys(state.headers).map(key => `${key}: ${state.headers[key].length > 50 ? state.headers[key].substr(0, 47) + '...' : state.headers[key]}`).join('\n     ')}` : '';
         const body = state.body ? `\n\n     ${JSON.stringify(state.body)}` : ''
 
