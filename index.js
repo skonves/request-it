@@ -45,7 +45,8 @@ function requestIt(testFn) {
         put: putUri,
         query,
         headers,
-        body
+        body,
+        attach
     }) {
         state.stage = 'ACT';
 
@@ -94,7 +95,11 @@ function requestIt(testFn) {
             state.body = body;
         }
 
-        req = req.send(body)
+        if (attach && attach.field && attach.buffer && attach.filename) {
+            req = req.attach(attach.field, attach.buffer, attach.filename);
+        } else {
+            req = req.send(body);
+        }
 
         state.headers = Object.assign(state.headers || {}, req.header);
 
