@@ -1,6 +1,6 @@
 {
   "name": "request-it",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Helper for writing functional API tests in Mocha",
   "main": "index.js",
   "scripts": {
